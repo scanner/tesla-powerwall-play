@@ -1,0 +1,10 @@
+# -e git://github.com/mlowijs/tesla_api.git@71cd21faa2a25057eac005f891509f028d9d257f#egg=tesla_api
+-e git://github.com/mlowijs/tesla_api.git@dcd659c77db95c99c1c443c1c367a9df331cf4f7#egg=tesla_api
+black
+docopt
+flake8
+hvac
+ipython
+pip-tools
+pytz
+tesla_powerwall
