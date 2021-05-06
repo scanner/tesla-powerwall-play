@@ -27,7 +27,7 @@ from tesla_api import TeslaApiClient
 COLORS = ["red", "blue", "green", "yellow", "orange", "cyan", "magenta"]
 TESLA_API_TOKEN_FILE = Path("~/.tesla-api-token").expanduser()
 VAULT_TOKEN_FILE = Path("~/.vault-token").expanduser()
-VAULT_SECRETS_PATH = os.getenv('VAULT_SECRETS_PATH')
+VAULT_SECRETS_PATH = os.getenv("VAULT_SECRETS_PATH")
 
 CHARTS = [
     "battery_power",
