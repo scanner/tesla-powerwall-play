@@ -24,21 +24,27 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib.dates as mdates
 
+from dotenv import load_dotenv
+
 # Project modules
 #
 from utils import get_hvac_client
 
+# XXX Should move dotenv processing in to `main()` and pass configured
+# values as parameters instead of module level attributes.
+#
+load_dotenv()
 
+VAULT_SECRETS_PATH = os.getenv("VAULT_SECRETS_PATH")
+POWERWALL_HOST = os.getenv("BACKUP_GW_ADDR")
 TIMEZONE = pytz.timezone("US/Pacific")
 NUM_SAMPLE_HORIZON = 1440  # 1 day at 1 minute between samples
 PLOT_INTERVAL = 1000 * 60  # once a minute
-HISTORY_FILE_DIR = Path("~/Sync/misc/powerwall_data").expanduser()
+HISTORY_FILE_DIR = Path(os.getenv("HISTORY_FILE_DIR")).expanduser()
 LAST_DAY_FILE = HISTORY_FILE_DIR / "last_24h.json"
 HISTORY_FILE_FMT = "%Y-%m-%d_data.json"
 DATE_FMT = "%Y-%m-%d_%H:%M:%S%z"
 PP = pprint.PrettyPrinter(indent=2)
-VAULT_SECRETS_PATH = os.getenev("VAULT_SECRETS_PATH")
-POWERWALL_HOST = os.getenv("BACKUP_GW_ADDR")
 
 
 ####################################################################

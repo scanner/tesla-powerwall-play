@@ -6,5 +6,6 @@ flake8
 hvac
 ipython
 pip-tools
+python-dotenv
 pytz
 tesla_powerwall

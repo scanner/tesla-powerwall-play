@@ -1,3 +1,4 @@
 *.png
 *.js
 *.dat
+.env*
